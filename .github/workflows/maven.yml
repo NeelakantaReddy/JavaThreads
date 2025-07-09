@@ -21,6 +21,9 @@ jobs:
       - name: Print selected environment
         run: echo "Building and deploying to ${{ github.event.inputs.run-name }}"
 
+      - name: print secret
+        run: echo "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
