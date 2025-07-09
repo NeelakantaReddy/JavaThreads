@@ -1,4 +1,4 @@
-package com.java.thread.example;
+package com.example;
 
 class ChildThread extends Thread {
 
@@ -13,5 +13,7 @@ public class FirstThread {
         ChildThread thread = new ChildThread();
         thread.run();
         System.out.println("Current Thread: " + Thread.currentThread().getName());
+        String tempDir = System.getProperty("java.io.tmpdir");
+        System.out.println("Java temporary directory: " + tempDir);
     }
 }

@@ -1,4 +1,4 @@
-package com.java.thread.example.lifecycle;
+package com.example.lifecycle;
 
 import java.util.LinkedList;
 import java.util.Queue;

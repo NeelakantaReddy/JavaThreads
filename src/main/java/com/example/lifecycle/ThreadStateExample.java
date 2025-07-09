@@ -1,4 +1,4 @@
-package com.java.thread.example.lifecycle;
+package com.example.lifecycle;
 
 class SharedResource {
     public synchronized void accessResource(String threadName) {
