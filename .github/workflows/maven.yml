@@ -23,3 +23,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+
+      - name: execute succesful build
+        run: java -jar /home/runner/work/JavaThreads/JavaThreads/target/JavaThreads-1.0-SNAPSHOT.jar
