@@ -38,5 +38,8 @@ jobs:
 
       - name: Build and Publish to GitHub Packages
         run: mvn deploy -B
+        env:
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - name: execute succesful build
 #        run: java -jar /home/runner/work/JavaThreads/JavaThreads/target/JavaThreads-1.0-SNAPSHOT.jar
