@@ -5,6 +5,12 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      run-name:
+        description: 'Choose environment'
+        required: false
+        default: 'first run'
 
 jobs:
   build:
@@ -12,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Print selected environment
+        run: echo "Building and deploying to ${{ github.event.inputs.run-name }}"
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
