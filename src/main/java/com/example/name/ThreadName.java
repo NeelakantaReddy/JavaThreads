@@ -1,6 +1,4 @@
-package com.java.thread.example.name;
-
-import java.util.Map;
+package com.example.name;
 
 class ChildThread extends Thread {
 

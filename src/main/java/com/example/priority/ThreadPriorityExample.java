@@ -1,4 +1,4 @@
-package com.java.thread.example.priority;
+package com.example.priority;
 
 class ThreadPriorityExample {
 

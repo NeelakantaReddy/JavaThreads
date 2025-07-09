@@ -1,10 +1,12 @@
-package com.java.thread.example;
+package com.example;
 
 public class SubArraySum {
 
     public static void main(String[] args) {
         System.out.println(new SubArraySum().twoSum(new int[]{1, 3, 5, 2, 8, 1, 5}, 3));
-    }
+               String tempDir = System.getProperty("java.io.tmpdir");
+                System.out.println("Java temporary directory: " + tempDir);
+       }
 
     public int twoSum(int[] nums, int k) {
         int sum = 0;

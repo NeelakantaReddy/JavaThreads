@@ -1,4 +1,4 @@
-package com.java.thread.example.volatilex;
+package com.example.volatilex;
 
 public class WithoutVolatile {
     private volatile static boolean flag = false;

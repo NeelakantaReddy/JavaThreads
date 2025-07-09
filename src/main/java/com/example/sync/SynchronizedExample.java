@@ -1,4 +1,4 @@
-package com.java.thread.example.sync;
+package com.example.sync;
 
 class Counter {
     private static int count = 0;

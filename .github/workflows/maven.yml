@@ -1,0 +1,37 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      run-name:
+        description: 'Choose environment'
+        required: false
+        default: 'first run'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print selected environment
+        run: echo "Building and deploying to ${{ github.event.inputs.run-name }}"
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: execute succesful build
+        run: java -jar /home/runner/work/JavaThreads/JavaThreads/target/JavaThreads-1.0-SNAPSHOT.jar

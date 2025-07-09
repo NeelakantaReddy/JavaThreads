@@ -1,4 +1,4 @@
-package com.java.thread.example.runnable;
+package com.example.runnable;
 
 class MyRunnable implements Runnable {
     @Override

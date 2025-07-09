@@ -1,4 +1,4 @@
-package com.java.thread.example.methods;
+package com.example.methods;
 
 class MethodExample {
 

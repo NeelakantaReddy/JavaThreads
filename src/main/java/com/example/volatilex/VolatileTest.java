@@ -1,4 +1,4 @@
-package com.java.thread.example.volatilex;// Java Program to demonstrate the
+package com.example.volatilex;// Java Program to demonstrate the
 // use of Volatile Keyword in Java
 
 public class VolatileTest {
