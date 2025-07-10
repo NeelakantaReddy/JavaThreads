@@ -33,26 +33,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Configure Maven credentials
-        run: |
-          mkdir -p ~/.m2
-          echo "<settings>
-            <servers>
-              <server>
-                <id>github</id>
-                <username>${{ secrets.GITHUB_USERNAME }}</username>
-                <password>${{ secrets.GITHUB_TOKEN }}</password>
-              </server>
-            </servers>
-          </settings>" > ~/.m2/settings.xml
-
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn clean package
 
-      - name: Build and Publish to GitHub Packages
-        run: mvn deploy -B
-        env:
-          GITHUB_USERNAME: ${{ secrets.USERNAME }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Build and Publish to GitHub Packages
+#        run: mvn deploy -B
+#        env:
+#          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload JAR as artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: JavaThreads-jar
+            path: target/*.jar
+
 #      - name: execute succesful build
 #        run: java -jar /home/runner/work/JavaThreads/JavaThreads/target/JavaThreads-1.0-SNAPSHOT.jar
